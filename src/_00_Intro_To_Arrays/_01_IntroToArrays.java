@@ -2,8 +2,11 @@ package _00_Intro_To_Arrays;
 
 import java.util.Random;
 
+
 public class _01_IntroToArrays {
+	
     public static void main(String[] args) {
+    	Random random = new Random();
         // 1. declare and Initialize an array 5 Strings
     	String[] teams = new String[5];
     	teams[0]="Knicks";
@@ -28,18 +31,39 @@ public class _01_IntroToArrays {
     		System.out.println(teams[i]);
     	}
         // 7. make an array of 50 integers
-
+    	int[] integers = new int[50];
         // 8. use a for loop to make every value of the integer array a random
         //    number
-
+    	for(int i=0; i<integers.length;i++) {
+    		integers[i]= random.nextInt(200); 
+    	}
         // 9. without printing the entire array, print only the smallest number
         //    on the array
+    	int smallestNumber=15;
+    	for(int i=0; i<integers.length; i++) {
+    		if(integers[i]<smallestNumber) {
+    			smallestNumber = integers[i];
+    		}
+    	}
+    	System.out.println(smallestNumber);
 
         // 10 print the entire array to see if step 8 was correct
-
+    	for (int i=0; i< integers.length; i++) {
+    		System.out.println(integers[i]);
+    	}
         // 11. print the largest number in the array.
-
+    	int largestNumber= 150;
+    	for (int i=0; i< integers.length; i++) {
+    		if(integers[i]>largestNumber) {
+    			largestNumber = integers[i];
+    		}
+    	}
+    	System.out.println(largestNumber);
         // 12. print only the last element in the array
-
+    	for(int i=0; i< integers.length; i++) {
+    		if(i==integers.length-1) {
+    			System.out.println(integers[i]);
+    		}
+    	}
     }
 }
