@@ -10,12 +10,23 @@ public class _02_RobotRace {
     // 1. make a main method
 	public static void main(String[] args) {
 		// 2. create an array of 5 robots.
-		Robot[] robots = new Robot[5];
+		Robot[] robots = new Robot [5];
         // 3. use a for loop to initialize the robots.
 		for (int i=0; i<robots.length; i++) {
 			robots[i]= new Robot();
-			//robots[i].goTo(400*i,300*i);
+			robots[i].setX(600-100*i);
+			robots[i].setY(550);
+			robots[i].setAngle(0);
+			robots[i].setSpeed(100);
 		}
+		int robotReference = 0;
+		Random random = new Random();
+		do 	 {
+			robotReference= (robotReference +1) % 5;
+				robots[robotReference].move(random.nextInt(50));
+				
+		} while(robots[robotReference].getY()>0);	 
+
         // 4. make each robot start at the bottom of the screen, side by side, facing up
 
 		
